@@ -1,0 +1,13 @@
+{
+  "name": "teamup",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "seed": "npm run seed --prefix server"
+  },
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

@@ -1,0 +1,30 @@
+/* index.css — global styles. Tailwind v4 is imported here; there is no tailwind.config file.
+   The two @fontsource imports bundle the fonts locally, so there is no Google Fonts request. */
+@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/source-serif-4';
+@import '@fontsource-variable/source-serif-4/opsz-italic.css';
+@import 'tailwindcss';
+
+/* Custom tokens: these become the font-display and font-serif utility classes. */
+@theme {
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+}
+
+/* Dark theme defaults for the whole document. */
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-gray-900 font-serif text-white antialiased;
+  }
+  ::selection {
+    @apply bg-indigo-500/40;
+  }
+}
+
+/* A small uppercase label used above sections ("DETECTED LANGUAGES"). */
+@utility eyebrow {
+  @apply text-xs font-semibold tracking-[0.16em] text-gray-400 uppercase;
+}
